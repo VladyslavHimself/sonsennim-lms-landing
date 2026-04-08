@@ -1,65 +1,80 @@
 import Image from "next/image";
+import GridLayout from './assets/grid-layout.svg';
+import Logotype from './assets/logotype.svg';
+import PhoneMockup from './assets/mockup.png';
+import LinkButton from "@/app/components/LinkButton";
+import RocketSvg from "@/app/components/icons/RocketSvg";
+import DownloadSvg from "@/app/components/icons/DownloadSvg";
+import MobileLogo from '@/app/assets/boxicons_mobile-alt.svg'
+import WindowsLogo from '@/app/assets/uim_windows.svg'
+import MacosLogo from '@/app/assets/wpf_macos.svg'
+import LinuxLogo from '@/app/assets/codicon_terminal-linux.svg'
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    return (
+        <div className="flex p-2 flex-col h-full min-h-dvh container mx-auto">
+            <div
+                className="relative overflow-hidden flex flex-col w-full h-168.75 pt-5 pl-7 pr-7 bg-[#f7f7f7] rounded-2xl">
+                <Image className="absolute pointer-events-none opacity-50 z-0 pl-13 pr-13" objectFit="cover" fill
+                       src={GridLayout}
+                       alt={"grid"}/>
+                <Image className="absolute pointer-events-none z-0 left-1/2 transform-[translateX(-25%)]"
+                       src={PhoneMockup} width={1293}
+                       height={870} alt={"phone"}/>
+                <div className="flex z-10 justify-between pr-8 pl-8 w-full h-fit items-center">
+                    <nav className="flex text-lg bg-white justify-center items-center rounded-full p-4 pl-7 pr-7">
+                        <Image src={Logotype} alt={"logo"} width={48} height={48} className="mr-8"/>
+                        <ul className="flex gap-5">
+                            <a>
+                                <li>Home</li>
+                            </a>
+                            <li>Features</li>
+                            <li>Upgrade</li>
+                            <li>Contact</li>
+                        </ul>
+                    </nav>
+
+                    <LinkButton variant="primary" value="Start learning" ImageComponent={RocketSvg}/>
+                </div>
+
+                <div className="flex z-10 flex-col mt-21 ml-12">
+                    <h2 className="text-3xl font-bold">
+                        <span className="text-blaze">
+                           Learn Once.
+                        </span>
+                        &nbsp; Remember forever
+                    </h2>
+
+                    <p className="text-xl w-1/2 text-gray-500 mt-4">
+                        Sonsennim (inspired by the Korean word for teacher) uses spaced repetition to schedule your
+                        reviews automatically — so you remember more with less effort. Create flashcards, track your
+                        progress, and let the system decide the perfect moment to revisit knowledge.
+                    </p>
+
+                    <div className="flex gap-4 mt-4">
+                        <LinkButton variant="primary" value="Download" ImageComponent={DownloadSvg}/>
+                        <LinkButton variant="outline" value="Open in your browser" ImageComponent={RocketSvg}/>
+                    </div>
+                    <div className="flex gap-4 mt-4">
+                        <div className="flex items-center gap-2">
+                            <Image src={MobileLogo} alt={"mobile phone"} width={24} height={24}/>
+                            <span className="text-base">Mobile</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Image src={WindowsLogo} alt={"mobile phone"} width={24} height={24}/>
+                            <span className="text-base">Windows</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Image src={MacosLogo} alt={"mobile phone"} width={24} height={24}/>
+                            <span className="text-base">MacOS</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Image src={LinuxLogo} alt={"mobile phone"} width={24} height={24}/>
+                            <span className="text-base">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
