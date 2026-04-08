@@ -5,14 +5,14 @@ import PhoneMockup from './assets/mockup.png';
 import LinkButton from "@/app/components/LinkButton";
 import RocketSvg from "@/app/components/icons/RocketSvg";
 import DownloadSvg from "@/app/components/icons/DownloadSvg";
-import MobileLogo from '@/app/assets/boxicons_mobile-alt.svg'
-import WindowsLogo from '@/app/assets/uim_windows.svg'
-import MacosLogo from '@/app/assets/wpf_macos.svg'
-import LinuxLogo from '@/app/assets/codicon_terminal-linux.svg'
+import MobileLogo from '@/app/assets/boxicons_mobile-alt.svg';
+import WindowsLogo from '@/app/assets/uim_windows.svg';
+import MacosLogo from '@/app/assets/wpf_macos.svg';
+import LinuxLogo from '@/app/assets/codicon_terminal-linux.svg';
 
 export default function Home() {
     return (
-        <div className="flex p-2 flex-col h-full min-h-dvh container mx-auto">
+        <div className="flex p-2 pt-6 flex-col h-full min-h-dvh container mx-auto">
             <div
                 className="relative overflow-hidden flex flex-col w-full h-168.75 pt-5 pl-7 pr-7 bg-[#f7f7f7] rounded-2xl">
                 <Image className="absolute pointer-events-none opacity-50 z-0 pl-13 pr-13" objectFit="cover" fill
@@ -25,9 +25,7 @@ export default function Home() {
                     <nav className="flex text-lg bg-white justify-center items-center rounded-full p-4 pl-7 pr-7">
                         <Image src={Logotype} alt={"logo"} width={48} height={48} className="mr-8"/>
                         <ul className="flex gap-5">
-                            <a>
-                                <li>Home</li>
-                            </a>
+                            <li>Home</li>
                             <li>Features</li>
                             <li>Upgrade</li>
                             <li>Contact</li>
