@@ -10,6 +10,7 @@ import WindowsLogo from '@/app/assets/uim_windows.svg';
 import MacosLogo from '@/app/assets/wpf_macos.svg';
 import LinuxLogo from '@/app/assets/codicon_terminal-linux.svg';
 import Chevron from '@/app/assets/glyphs_chevron-bold.svg';
+import {MemoryCard} from "@/app/components/MemoryCard";
 
 // sm-md-lg-xl
 // 320 - 448 - 512 - 576
@@ -106,6 +107,37 @@ export default function Home() {
                 <div className="absolute md:hidden bottom-1 left-1/2 transform -translate-x-1/2">
                     <Image src={Chevron} alt={"chevron"}/>
                 </div>
+            </div>
+
+            <div
+                className="relative justify-center items-center text-center mt-14 overflow-hidden flex flex-col h-screen md:h-[728px] w-full pl-4 pr-4 rounded-2xl">
+                <Image className="absolute pointer-events-none opacity-50 z-0 pl-13 pr-13" objectFit="cover" fill
+                       src={GridLayout}
+                       alt={"grid"}
+                />
+
+                <div className="absolute top-[10%] left-5 rotate-15 transform-gpu backface-hidden">
+                    <MemoryCard variant="primary" frontWord="안녀하세요!" backWord="Hello!"/>
+                </div>
+
+                <div className="absolute top-[20%] right-5 -rotate-15 transform-gpu backface-hidden">
+                    <MemoryCard variant="secondary" frontWord="How are you? 🤔"/>
+                </div>
+
+                <div className="absolute top-[80%] left-5 -rotate-15 transform-gpu backface-hidden">
+                    <MemoryCard variant="secondary" frontWord="사랑해요 🧡"/>
+                </div>
+
+                <div className="absolute top-[70%] right-5 rotate-15 transform-gpu backface-hidden">
+                    <MemoryCard variant="secondary" frontWord="만나서 반갑습니다! 😊"/>
+                </div>
+
+                <span className="font-medium text-[22px] md:text-4xl lg:text-6xl"><span
+                    className="text-blaze">Build</span> your cards</span>
+                <span className="font-medium text-[22px] md:text-4xl lg:text-6xl"><span
+                    className="text-blaze">Choose</span> your own way to learn things</span>
+                <span className="font-medium text-[22px] md:text-4xl lg:text-6xl"><span
+                    className="text-blaze">Discover</span> community decks</span>
             </div>
         </div>
     );
