@@ -6,6 +6,8 @@
     --font-gilroy: 'Gilroy-Regular', Arial, Helvetica, sans-serif;
     --color-blaze: #F77618;
     --selection-color: rgb(253 119 11 / 0.5);
+
+    --card-background: #f7f7f7;
 }
 
 @theme {
@@ -13,6 +15,7 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-gilroy);
     --color-blaze: var(--color-blaze);
+    --color-card-background: var(--card-background);
     --selection-color: var(--selection-color);
 }
 

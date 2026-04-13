@@ -10,7 +10,9 @@ import WindowsLogo from '@/app/assets/uim_windows.svg';
 import MacosLogo from '@/app/assets/wpf_macos.svg';
 import LinuxLogo from '@/app/assets/codicon_terminal-linux.svg';
 import Chevron from '@/app/assets/glyphs_chevron-bold.svg';
+import CardsMinimized from '@/app/assets/cards-minimized.png';
 import {MemoryCard} from "@/app/components/MemoryCard";
+import {FeatureTextCard} from "@/app/components/FeatureTextCard";
 
 // sm-md-lg-xl
 // 320 - 448 - 512 - 576
@@ -30,19 +32,19 @@ export default function Home() {
     return (
         <div className="flex flex-col h-full min-h-dvh container mx-auto md:p-7">
             <div
-                className="relative overflow-hidden flex flex-col h-screen md:h-[728px] w-full pl-4 pr-4 lg:bg-[#f7f7f7] rounded-2xl">
-                <Image className="absolute pointer-events-none opacity-50 z-0 pl-13 pr-13" objectFit="cover" fill
+                className="relative overflow-hidden flex flex-col h-screen md:h-[728px] w-full px-4 lg:bg-[#f7f7f7] rounded-2xl">
+                <Image className="absolute pointer-events-none opacity-50 z-0 px-13" objectFit="cover" fill
                        src={GridLayout}
                        alt={"grid"}/>
 
                 <Image
-                    className="absolute border hidden lg:block pointer-events-none z-0 left-1/3 lg:top-2  xl:top-1/7 transform translate-x-[-5%]"
+                    className="absolute hidden lg:block pointer-events-none z-0 left-1/3 lg:top-2  xl:top-1/7 transform translate-x-[-5%]"
                     src={PhoneMockup} width={1293}
                     height={870} alt={"phone"}/>
 
                 <div
-                    className="justify-center lg:justify-between lg:mt-4 md:flex z-10 pr-8 pl-8 w-full h-fit items-center">
-                    <nav className="flex text-lg bg-white justify-center items-center rounded-full p-4 pl-7 pr-7">
+                    className="justify-center lg:justify-between lg:mt-4 md:flex z-10 px-8 w-full h-fit items-center">
+                    <nav className="flex text-lg bg-white justify-center items-center rounded-full p-4 px-7">
                         <Image src={Logotype} alt={"logo"} width={48} height={48} className="mr-8 hidden lg:block"/>
                         <ul className="flex gap-5">
                             <li>Home</li>
@@ -110,8 +112,8 @@ export default function Home() {
             </div>
 
             <div
-                className="relative justify-center items-center text-center mt-14 overflow-hidden flex flex-col h-screen md:h-[728px] w-full pl-4 pr-4 rounded-2xl">
-                <Image className="absolute pointer-events-none opacity-50 z-0 pl-13 pr-13" objectFit="cover" fill
+                className="relative justify-center items-center text-center mt-14 overflow-hidden flex flex-col h-screen md:h-[728px] w-full px-4 rounded-2xl">
+                <Image className="absolute pointer-events-none opacity-50 z-0 px-13" objectFit="cover" fill
                        src={GridLayout}
                        alt={"grid"}
                 />
@@ -139,6 +141,54 @@ export default function Home() {
                 <span className="font-medium text-[22px] md:text-4xl lg:text-6xl"><span
                     className="text-blaze">Discover</span> community decks</span>
             </div>
+
+            <div className="relative mt-14 flex flex-col w-full px-4 rounded-2xl">
+
+                <h2 className="text-3xl xl:text-5xl font-bold text-blaze self-center mt-7">Features</h2>
+                <div className="flex mt-5 flex-col z-1 md:flex-row md:gap-3.5">
+                    <div className="md:w-[300px] lg:flex-1">
+                        <div className="relative overflow-hidden flex w-full h-fit
+                         min-h-[150px]
+                         md:min-h-[405px]
+                         lg:min-h-[430px]
+                         bg-card-background shadow-[0_0_15px_0_rgba(0,0,0,0.2)] rounded-4xl pt-6 pb-6 px-5">
+                            <div className="text-xl z-1 lg:text-2xl xl:text-3xl font-bold"><span
+                                className="text-blaze">Configure</span> your
+                                cards<br/> and watch your learning reports!
+                            </div>
+
+                            <Image
+                                className="absolute opacity-80 scale-80 -bottom-30 -right-15 md:-bottom-15 md:-right-5 md:scale-100  lg:scale-150"
+                                src={CardsMinimized}
+                                alt={"cards"} width={307} height={300}/>
+                        </div>
+                    </div>
+
+                    <div className="flex md:flex-1 flex-col gap-4 mt-5 md:mt-0">
+                        <div className="flex-1">
+                            <FeatureTextCard title="FSRS — A Smarter Way to Learn"
+                                             description="Sonsennim uses FSRS (Free Spaced Repetition Scheduler) —
+                                         one of the most advanced learning algorithms available today."
+                            />
+                        </div>
+
+                        <div className="flex flex-col md:flex-row gap-4 flex-1">
+                            <div className="md:flex-1">
+                                <FeatureTextCard title="Fully personalized"
+                                                 description="adapts to your memory, not averages"/>
+                            </div>
+
+
+                            <div className="md:flex-1">
+                                <FeatureTextCard title="Up to 40%" description="fewer reviews for the same results"
+                                                 isAttentionCard
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    );
+    )
+        ;
 }
