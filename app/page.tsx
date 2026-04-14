@@ -116,7 +116,7 @@ export default function Home() {
 
                         <div className="flex flex-col lg:flex-row items-center gap-4 mt-5">
                             <LinkButton
-                                link={productLink}
+                                link={`${productLink}?install=true`}
                                 target="_blank"
                                 classes="order-2 lg:order-1" variant="primary" value="Download"
                                         ImageComponent={DownloadSvg}/>
