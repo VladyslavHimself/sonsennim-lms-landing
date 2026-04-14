@@ -17,6 +17,8 @@ import PricingCard, {PricingCardEntity} from "@/app/components/PricingCard";
 import Link from "next/link";
 import MobileFooterLink from "@/app/components/MobileFooterLink";
 
+const productLink = "https://learn.sonsennim.com";
+
 
 const pricingList: PricingCardEntity[] = [
     {
@@ -78,14 +80,17 @@ export default function Home() {
                             <Image src={Logotype} alt={"logo"} width={48} height={48} className="mr-8 hidden lg:block"/>
                             <ul className="flex gap-5">
                                 <li>Home</li>
-                                <li>Features</li>
-                                <li>Upgrade</li>
-                                <li>Contact</li>
+                                <li><Link href={"#features"}>Features</Link></li>
+                                <li><Link href={"#upgrade"}>Upgrade</Link></li>
+                                <li><Link href={"#contact"}>Contact</Link></li>
                             </ul>
                         </nav>
 
                         <div className="hidden lg:block z-10">
-                            <LinkButton variant="primary" value="Start learning" ImageComponent={RocketSvg}/>
+                            <LinkButton
+                                link={productLink}
+                                target="_blank"
+                                variant="primary" value="Start learning" ImageComponent={RocketSvg}/>
                         </div>
                     </div>
 
@@ -110,9 +115,14 @@ export default function Home() {
                         </p>
 
                         <div className="flex flex-col lg:flex-row items-center gap-4 mt-5">
-                            <LinkButton classes="order-2 lg:order-1" variant="primary" value="Download"
+                            <LinkButton
+                                link={productLink}
+                                target="_blank"
+                                classes="order-2 lg:order-1" variant="primary" value="Download"
                                         ImageComponent={DownloadSvg}/>
-                            <LinkButton classes="order-1 lg:order-2" variant="outline" value="Open in your browser"
+                            <LinkButton
+                                link={productLink}
+                                classes="order-1 lg:order-2" variant="outline" value="Open in your browser"
                                         ImageComponent={RocketSvg}/>
                         </div>
 
@@ -172,7 +182,7 @@ export default function Home() {
                         className="text-blaze">Discover</span> community decks</span>
                 </div>
 
-                <div className="relative mt-14 flex flex-col w-full px-4">
+                <div id="features" className="relative mt-14 flex flex-col w-full px-4">
                     <h2 className="text-3xl xl:text-5xl font-bold text-blaze self-center mt-7">Features</h2>
                     <div className="flex mt-5 flex-col z-1 md:flex-row md:gap-3.5">
                         <div className="md:w-[300px] lg:flex-1">
@@ -219,7 +229,7 @@ export default function Home() {
                 </div>
 
 
-                <div className="relative flex mt-14 flex-col w-full px-4">
+                <div id="upgrade" className="relative flex mt-14 flex-col w-full px-4">
                     <h2 className="text-3xl xl:text-5xl font-bold text-blaze self-center mt-7">Choose your path</h2>
                     <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center mt-14 gap-5.5">
                         <PricingCard variant="standard" pricingInfo={pricingList[0]}/>
@@ -239,10 +249,10 @@ export default function Home() {
                         <h2 className="text-3xl xl:text-5xl font-bold text-blaze self-center mt-7">Information</h2>
 
                         <div className="flex flex-col gap-4 mt-8">
-                            <MobileFooterLink value={"Product"} link={"#"}/>
-                            <MobileFooterLink value={"Privacy Policy"} link={"#"}/>
-                            <MobileFooterLink value={"Terms of Service"} link={"#"}/>
-                            <MobileFooterLink value={"Contact"} link={"#"}/>
+                            <MobileFooterLink value={"Product"} link={productLink}/>
+                            <MobileFooterLink value={"Privacy Policy"} link={"/privacy-policy"}/>
+                            <MobileFooterLink value={"Terms of Service"} link={"/terms-of-service"}/>
+                            <MobileFooterLink value={"Contact"} link={"mailto:vladyslav.lutchyn@gmail.com"}/>
                         </div>
                     </div>
 
@@ -253,15 +263,16 @@ export default function Home() {
             <div className="hidden lg:block w-full h-25 bg-card-background mt-20">
                 <div className="container flex items-center justify-between m-auto h-full">
                    <div className="flex gap-6">
-                       <Link className="text-xl" href="#">Product</Link>
-                       <Link className="text-xl" href="#">Privacy Policy</Link>
-                       <Link className="text-xl" href="#">Terms of Service</Link>
-                       <Link className="text-xl" href="#">Contact</Link>
+                       <Link className="text-xl" href={productLink}>Product</Link>
+                       <Link className="text-xl" href="/privacy-policy">Privacy Policy</Link>
+                       <Link className="text-xl" href="/terms-of-service">Terms of Service</Link>
+                       <Link className="text-xl" href="mailto:vladyslav.lutchyn@gmail.com">Contact</Link>
                    </div>
 
                     <div className="text-xl">© 2026 Sonsennim-LMS. All rights reserved.</div>
                 </div>
             </div>
+            <div id="contact" />
         </>
     );
 }
