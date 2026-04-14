@@ -250,7 +250,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="hidden lg:block w-full h-25 bg-card-background">
+            <div className="hidden lg:block w-full h-25 bg-card-background mt-20">
                 <div className="container flex items-center justify-between m-auto h-full">
                    <div className="flex gap-6">
                        <Link className="text-xl" href="#">Product</Link>
