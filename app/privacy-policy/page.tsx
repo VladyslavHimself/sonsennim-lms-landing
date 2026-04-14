@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Logotype from '../assets/logotype.svg';
+import Logotype from '../../public/logotype.svg';
 import LinkButton from "@/app/components/LinkButton";
 import RocketSvg from "@/app/components/icons/RocketSvg";
 import Link from "next/link";

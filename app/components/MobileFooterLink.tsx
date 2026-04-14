@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import ChevronRight from '../assets/glyphs_chevron-right.svg';
+import ChevronRight from '../../public/glyphs_chevron-right.svg';
 
 type Props = {
     value: string,
