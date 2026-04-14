@@ -1,10 +1,8 @@
-// @flow
-import * as React from 'react';
-
 type Props = {
     title: string,
     description?: string,
     isAttentionCard?: boolean,
+    classes?: string,
 };
 
 const attentionCardClasses = "bg-blaze text-white shadow-[inset_0_0_50px_20px_rgba(255,255,255,0.25)]";
